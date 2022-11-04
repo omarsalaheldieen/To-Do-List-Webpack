@@ -1,0 +1,218 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0px;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+*:focus {
+  outline: none;
+}
+.Page {
+  min-height: 100vh;
+  background-color: #f1f5f9;
+}
+.Page .user-profile {
+  color: deepskyblue;
+  margin-top: 30px;
+  margin-left: 80px;
+}
+.User-name {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.Email {
+  text-align: center;
+}
+.Nav-menu {
+  display: flex;
+  margin-right: 20px;
+}
+.Todos {
+  color: darkturquoise;
+}
+.Container {
+  background-color: white;
+  height: 85%;
+  width: 95%;
+  margin: auto;
+  margin-top: 30px;
+  border-radius: 7%;
+  box-shadow: 5px 5px 10px #ddd;
+}
+.Active {
+  font-size: 22px;
+  font-weight: bold;
+  width: 90%;
+  margin: auto;
+  position: relative;
+  top: 10px;
+}
+.tasks-count {
+  margin-top: 70px;
+  margin-left: 20px;
+  font-weight: bold;
+}
+.tasks-count span {
+  color: white;
+  background-color: blue;
+  padding: 2px 5px;
+  border-radius: 7px;
+}
+.tasks-completed {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-weight: bold;
+}
+.tasks-completed span {
+  color: white;
+  background-color: green;
+  padding: 2px 5px;
+  border-radius: 7px;
+}
+.tasks-active {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-weight: bold;
+}
+.tasks-active span {
+  color: white;
+  background-color: red;
+  padding: 2px 5px;
+  border-radius: 7px;
+}
+.Tasks {
+  background-color: #eee;
+  margin-top: 20px;
+  border-radius: 6px;
+  padding: 20px;
+  width: 90%;
+  margin: auto;
+  position: relative;
+  top: 20px;
+}
+.Completed-tasks {
+  background-color: #eee;
+  margin-top: 20px;
+  border-radius: 6px;
+  padding: 20px;
+  width: 90%;
+  margin: auto;
+  margin-top: 35px;
+}
+.Tasks .task {
+  background-color: white;
+  padding: 10px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  transition: 0.3s;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+.Tasks .task:hover {
+  background-color: #f7f7f7;
+}
+.Completed-tasks .task {
+  background-color: white;
+  padding: 10px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  transition: 0.3s;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+.Completed-tasks .task .del {
+  font-weight: bold;
+  font-size: 13px;
+  background-color: red;
+  color: white;
+  padding: 5px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.Completed-tasks .task .uncomp {
+  font-weight: bold;
+  font-size: 13px;
+  background-color: darkorange;
+  color: white;
+  padding: 5px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-left: auto;
+  margin-right: 8px;
+}
+.Tasks .task .comp {
+  font-weight: bold;
+  font-size: 13px;
+  background-color: lawngreen;
+  color: white;
+  padding: 5px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 12px;
+  transition: 0.2s;
+}
+.Tasks .task .Upd {
+  font-weight: bold;
+  font-size: 13px;
+  background-color: blue;
+  color: white;
+  padding: 5px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 12px;
+  transition: 0.2s;
+}
+.Tasks .task .comp:hover,
+.Tasks .task .del:hover,
+.Tasks .task .Upd:hover,
+.Completed-tasks .task .uncomp:hover,
+.Completed-tasks .task .del:hover {
+  transform: scale(1.2, 1.2);
+}
+.Tasks .task .del {
+  font-weight: bold;
+  font-size: 13px;
+  background-color: red;
+  color: white;
+  padding: 5px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.Form {
+  background-color: #eee;
+  border-radius: 6px;
+  padding: 20px;
+  display: flex;
+  width: 90%;
+  margin: auto;
+  position: relative;
+  top: 30px;
+}
+
+.Input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  flex: 1;
+}
+.Input:focus {
+  outline: none;
+}
+.Completed {
+  font-size: 22px;
+  font-weight: bold;
+  width: 90%;
+  margin: auto;
+  position: relative;
+  top: 30px;
+  display: flex;
+}

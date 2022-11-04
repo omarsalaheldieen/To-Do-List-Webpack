@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./assets/Styles/Home.css" />
+    <link rel="stylesheet" href="./assets/Styles/Framework.css" />
+    <link rel="stylesheet" href="./assets/Styles/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&#038;display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link
+      rel="icon"
+      type="image/x-icon"
+      href="/src/assets/icons8-walter-white-48.png">
+    <title>Home</title>
+  </head>
+  <body>
+    <div class="Page d-flex">
+      <div class="sidebar bg-white p-20 p-relative">
+        <i class="fa-solid fa-user fa-5x user-profile"></i>
+        <h4 class="User-name">admin</h4>
+        <h4 class="Email">omarsalah@gmail.com</h4>
+        <div class="task-stats">
+          <div class="tasks-count">Tasks <span>0</span></div>
+          <div class="tasks-active">Active <span>0</span></div>
+          <div class="tasks-completed">Completed <span>0</span></div>
+        </div>
+      </div>
+      <div class="Content W-full">
+        <div class="Head bg-white p-15 between-flex">
+          <ul class="Nav-menu">
+            <li>
+              <a class="Home" href="index.html">Home</a>
+            </li>
+            <li>
+              <a class="Todos" href="assets/pages/Todos.html">Todos</a>
+            </li>
+            <li>
+              <a class="Settings" href="assets/pages/Settings.html">Settings</a>
+            </li>
+          </ul>
+        </div>
+        <div class="Container">
+          <div class="Container-Section-a">
+            <div class="Container-Section-b"></div>
+          </div>
+          <div class="Form">
+            <input type="Text" class="Input" />
+            <input type="submit" class="Add" value="Add Task">
+          </div>
+          <div class="Tasks"></div>
+        </div>
+      </div>
+      <script src="./assets/Js/Home.js"></script>
+    </body>
+  </html>

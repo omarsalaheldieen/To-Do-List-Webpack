@@ -1,0 +1,40 @@
+/* Start box */
+.d-flex {
+  display: flex;
+}
+.sidebar {
+  width: 270px;
+  box-shadow: 0 0 10px #ddd;
+}
+.m-20 {
+  margin: 20px;
+}
+.bg-white {
+  background-color: white;
+}
+.p-relaive {
+  position: relative;
+}
+.p-15 {
+  padding: 15px;
+}
+.between-flex {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  box-shadow: 0 0 10px #ddd;
+}
+ul {
+  list-style-type: none;
+}
+.W-full {
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+li {
+  margin-left: 30px;
+  font-weight: 700;
+}
