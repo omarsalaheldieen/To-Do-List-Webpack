@@ -6,12 +6,11 @@ const tasksCount = document.querySelector('.tasks-count span')
 const tasksCompleted = document.querySelector('.tasks-completed span')
 const tasksactive = document.querySelector('.tasks-active span')
 const daaa = window.localStorage.getItem('state')
+
 async function funcName (url) {
   const response = await fetch(url)
   const data = await response.json()
-  const {
-    content
-  } = data
+  const { content } = data
   document.querySelector('.Container-Section-b').textContent = content
 }
 if (daaa === '1') {
@@ -26,6 +25,7 @@ if (localStorage.getItem('Tasks')) {
   arrayOfTasks = JSON.parse(localStorage.getItem('Tasks'))
 }
 getDataToLocalStorageFrom()
+
 submit.onclick = function () {
   if (input.value !== '') {
     addTaskToArray(input.value) // Add Task To Array Of Tasks
@@ -34,13 +34,15 @@ submit.onclick = function () {
   }
 }
 
-taskdiv.addEventListener('click', e => {
+taskdiv.addEventListener('click', (e) => {
   // Delete Button
   if (e.target.classList.contains('del')) {
     // Remove Element From Page
     e.target.parentElement.remove()
     // remove it from local storage
-    deleteTaskFromlocalStorage(e.target.parentElement.getAttribute('Task-name'))
+    deleteTaskFromlocalStorage(
+      e.target.parentElement.getAttribute('Task-name')
+    )
     CalculateTasks()
   }
   if (e.target.classList.contains('comp')) {
@@ -56,7 +58,6 @@ taskdiv.addEventListener('click', e => {
       Updatethetask(e.target.parentElement.getAttribute('Task-name')) // Add Task To Array Of Tasks
       input.value = '' // Empty Input Field
     }
-
     getDataToLocalStorageFrom()
   }
 })
@@ -79,9 +80,10 @@ function addTaskToArray (taskText) {
   // Add task to local Storage
   addDataToLocalStorageFrom(arrayOfTasks)
 }
+
 function addElementsToPageFrom (arrayOfTasks) {
   taskdiv.innerHTML = ''
-  arrayOfTasks.forEach(task => {
+  arrayOfTasks.forEach((task) => {
     const div = document.createElement('div')
     div.className = 'task'
     if (task.completed) {
@@ -129,7 +131,7 @@ function getDataToLocalStorageFrom () {
 
 // Delete the Task from the local storage
 function deleteTaskFromlocalStorage (taskId) {
-  arrayOfTasks = arrayOfTasks.filter(task => task.id != taskId)
+  arrayOfTasks = arrayOfTasks.filter((task) => task.id !== taskId)
   // then put the new data in local storage
   addDataToLocalStorageFrom(arrayOfTasks)
 }
@@ -149,7 +151,9 @@ function Updatethetask (taskId) {
 function toggleStatusTaskWith (taskId) {
   for (let i = 0; i < arrayOfTasks.length; i++) {
     if (arrayOfTasks[i].id == taskId) {
-      arrayOfTasks[i].completed == false ? arrayOfTasks[i].completed = true : arrayOfTasks[i].completed = false
+      arrayOfTasks[i].completed == false
+        ? (arrayOfTasks[i].completed = true)
+        : (arrayOfTasks[i].completed = false)
     }
   } // then put the new data in local storage
   addDataToLocalStorageFrom(arrayOfTasks)
@@ -161,5 +165,8 @@ function CalculateTasks () {
   // Calculte the finished Tasks
   tasksCompleted.innerHTML = document.querySelectorAll('.Tasks .done').length
   // calculate the active tasks
-  tasksactive.innerHTML = (tasksCount.innerHTML = document.querySelectorAll('.Tasks .task').length) - (tasksCompleted.innerHTML = document.querySelectorAll('.Tasks .done').length)
+  tasksactive.innerHTML =
+    (tasksCount.innerHTML = document.querySelectorAll('.Tasks .task').length) -
+    (tasksCompleted.innerHTML =
+      document.querySelectorAll('.Tasks .done').length)
 }

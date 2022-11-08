@@ -1,5 +1,5 @@
 const taskdiv = document.querySelector('.Reset')
-taskdiv.addEventListener('click', e => {
+taskdiv.addEventListener('click', function (e) {
   // Delete Button
   if (e.target.classList.contains('Reomveall')) {
     window.localStorage.clear()
@@ -14,7 +14,7 @@ function Powerbutton () {
 function changeContent () {
   let count = 1
   // Store the State of the power in local storage
-  const next = function () {
+  const next = function next () {
     if (count === 1) {
       localStorage.setItem('state', count)
       count = 0

@@ -10,7 +10,7 @@ if (localStorage.getItem('Tasks')) {
   arrayOfTasks = JSON.parse(localStorage.getItem('Tasks'))
 }
 getDataToLocalStorageFrom()
-taskCompleted.addEventListener('click', e => {
+taskCompleted.addEventListener('click', function (e) {
   if (e.target.classList.contains('del')) {
     // Remove Element From Page
     e.target.parentElement.remove()
@@ -21,7 +21,7 @@ taskCompleted.addEventListener('click', e => {
   tasksCompleted.innerHTML = document.querySelectorAll('.Completed-tasks .done').length
   tasksCount.innerHTML = document.querySelectorAll('.Tasks .task').length + document.querySelectorAll('.Completed-tasks .done').length
 })
-taskCompleted.addEventListener('click', e => {
+taskCompleted.addEventListener('click', function (e) {
   if (e.target.classList.contains('uncomp')) {
     // remove it from local storage
     toggleStatusTaskWith(e.target.parentElement.getAttribute('Task-name'))
@@ -32,15 +32,9 @@ taskCompleted.addEventListener('click', e => {
       // get the datanew from local storage
       getDataToLocalStorageFrom()
     }
-  } else if (e.target.classList.contains('del')) {
-    // Remove Element From Page
-    e.target.parentElement.remove()
-    // remove it from local storage
-    deleteTaskFromlocalStorage(e.target.parentElement.getAttribute('Task-name'))
-    CalculateTasks()
   }
 })
-taskdiv.addEventListener('click', e => {
+taskdiv.addEventListener('click', function (e) {
   // Delete Button
   if (e.target.classList.contains('del')) {
     // Remove Element From Page
@@ -77,7 +71,7 @@ taskdiv.addEventListener('click', e => {
 function addElementsToPageFrom (arrayOfTasks) {
   taskdiv.innerHTML = ''
   taskCompleted.innerHTML = ''
-  arrayOfTasks.forEach(task => {
+  arrayOfTasks.forEach(function (task) {
     // check if task is completed or not
     if (task.completed === false) {
       const div = document.createElement('div')
@@ -110,27 +104,27 @@ function addElementsToPageFrom (arrayOfTasks) {
     }
     // check if task is completed or not
     else {
-      const div = document.createElement('div')
-      div.className = 'task'
+      const _div = document.createElement('div')
+      _div.className = 'task'
       if (task.completed) {
-        div.className = 'task done'
+        _div.className = 'task done'
       }
-      div.setAttribute('Task-name', task.id)
-      div.setAttribute('Task-state', task.completed)
-      div.appendChild(document.createTextNode(task.title))
+      _div.setAttribute('Task-name', task.id)
+      _div.setAttribute('Task-state', task.completed)
+      _div.appendChild(document.createTextNode(task.title))
       // Create Delete Button
-      const span = document.createElement('span')
-      span.className = 'del'
-      span.appendChild(document.createTextNode('Delete'))
+      const _span = document.createElement('span')
+      _span.className = 'del'
+      _span.appendChild(document.createTextNode('Delete'))
       // Add Button Uncomplete
       const spanuncomplete = document.createElement('span')
       spanuncomplete.className = 'uncomp'
       spanuncomplete.appendChild(document.createTextNode('Uncomplete'))
       // Append Button To Main Div
-      div.appendChild(spanuncomplete)
-      div.appendChild(span)
+      _div.appendChild(spanuncomplete)
+      _div.appendChild(_span)
       // Add Task Div To Tasks Container
-      taskCompleted.appendChild(div)
+      taskCompleted.appendChild(_div)
     }
   })
 }
@@ -154,7 +148,8 @@ function getDataToLocalStorageFrom () {
 
 // Delete the Task from the local storage
 function deleteTaskFromlocalStorage (taskId) {
-  arrayOfTasks = arrayOfTasks.filter(task => task.id != taskId)
+  console.log("ooo")
+  arrayOfTasks = arrayOfTasks.filter((task) => task.id != taskId)
   // then put the new data in local storage
   addDataToLocalStorageFrom(arrayOfTasks)
 }
